@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天海之地 - 古老手稿下載頁面</title>
+    <style>
+        :root {
+            /* 中世紀羊皮紙與金屬色調 */
+            --bg-color: #f4e4bc; /* 羊皮紙底色 */
+            --parchment-texture: url('https://www.transparenttextures.com/patterns/dark-dotted-2.png'); /* 增加一點材質感 */
+            --ink-color: #3e2723; /* 深墨水色 */
+            --border-color: #a1887f; /* 舊化金屬/皮革色 */
+            --accent-color: #d84315; /* 警告與按鈕的鐵鏽紅 */
+            --font-family: 'Times New Roman', Times, serif; /* 使用更具復古感的襯線字體 */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: var(--parchment-texture);
+            color: var(--ink-color);
+            font-family: var(--font-family);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 95%;
+            margin-top: 30px;
+            background: #fff8e1; /* 較亮的紙張核心區 */
+            /* 複雜的復古邊框設計 */
+            border: 10px solid transparent;
+            border-image: url('https://i.imgur.com/8f8vV9L.png') 30 stretch; /* 這裡需要一個復古邊框圖片連結，若無則使用替代方案 */
+            /* 替代方案：雙重舊化邊框 */
+            border: 3px double var(--border-color);
+            padding: 40px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            background-clip: padding-box; /* 確保背景不穿透邊框 */
+        }
+
+        /* 裝飾性角鐵效果 (模擬) */
+        .container::before, .container::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--border-color);
+        }
+
+        .container::before { top: -15px; left: -15px; border-right: none; border-bottom: none; }
+        .container::after { bottom: -15px; right: -15px; border-left: none; border-top: none; }
+
+        h1 {
+            color: var(--ink-color);
+            text-align: center;
+            font-variant: small-caps;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        .version-info {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .lore-box {
+            background: rgba(216, 67, 21, 0.05); /* 極淡的警告紅背景 */
+            border: 2px dashed var(--accent-color);
+            padding: 20px;
+            margin-bottom: 35px;
+            font-size: 1.1em;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* 羊皮紙卷軸裝飾 (模擬) */
+        .lore-box::before {
+            content: "✍";
+            position: absolute;
+            top: -15px;
+            left: 10px;
+            background: #fff8e1;
+            padding: 0 5px;
+            color: var(--accent-color);
+        }
+
+        .download-btn {
+            display: block;
+            width: 280px;
+            margin: 0 auto;
+            background: var(--accent-color);
+            color: #fff;
+            padding: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            border: 2px solid #8e24aa; /* 帶點神祕感的紫色邊框 */
+            text-transform: uppercase;
+            text-align: center;
+            box-shadow: 3px 3px 0px rgba(0,0,0,0.3);
+            font-size: 1.2em;
+        }
+
+        .download-btn:hover {
+            background: #bf360c;
+            transform: translateY(-2px);
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
+        }
+
+        .credits {
+            margin-top: 50px;
+            font-size: 0.95em;
+            color: var(--ink-color);
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+        }
+
+        .credits ul {
+            list-style-type: '✒ '; /* 使用鋼筆符號作為清單項目 */
+        }
+
+        .team-member {
+            font-weight: bold;
+            color: #5d4037;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 30px;
+            font-size: 0.85em;
+            text-align: center;
+            width: 100%;
+            color: #8d6e63;
+            border-top: 1px dashed var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>天海之地 (Heaven & Sea)</h1>
+    
+    <p class="version-info">稳定版本：v1.0.0-Stable</p>
+
+    <div class="lore-box">
+        <strong>警告：</strong>邪惡的「<span style="color:var(--accent-color);">咒術忍者</span>」正不斷從草叢中竄出！<br>
+        他們的唯一目標，就是搶奪你手中的<strong>統一布丁</strong>。<br>
+        拿起你的武器，守護這最後的甜點。
+    </div>
+
+    <a href="#" class="download-btn">立即下載安裝檔 (.EXE)</a>
+
+    <div class="credits">
+        <p>此手稿由以下團隊編撰：</p>
+        <ul>
+            <li>主要作者：<span class="team-member">dongdaxia</span></li>
+            <li>技術協作：<span class="team-member">Gemini</span>, <span class="team-member">Aresir</span></li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <p>Apache License Version 2.0, January 2004</p>
+    <p>&copy; 2026 天海之地開發組. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
